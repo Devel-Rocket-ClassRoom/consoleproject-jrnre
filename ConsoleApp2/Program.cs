@@ -121,6 +121,7 @@ namespace ConsoleApp2
         {
             public int playerY;
             public int playerX;
+            public int doar;
 
             public void PrintMap(char[,] data)
             {
@@ -134,6 +135,7 @@ namespace ConsoleApp2
 
             public void PlayGame(char[,] mapData, int mCount, int stageLevel)
             {
+                doar = 1;
                 playerY = 1;
                 playerX = 1;
                 int MonsterCount = mCount;
