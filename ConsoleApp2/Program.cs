@@ -158,7 +158,7 @@ namespace ConsoleApp2
                     }
 
                     Console.WriteLine("이동(L, R, U, D):");
-                    string cmd = Console.ReadLine().ToUpper();
+                    String cmd = Console.ReadKey().ToString();
 
                     int nextY = playerY;
                     int nextX = playerX;
