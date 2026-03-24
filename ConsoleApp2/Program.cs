@@ -30,7 +30,7 @@ namespace ConsoleApp2
                 MapData md = new MapData();
                 md.CreateMap(row, col);
                 Map game = new Map();
-                game.PlayGame(md.mapData, md.monsterCount, stageLevel);
+                game.PlayGame(md.mapData, md.monsterCount,stageLevel);
                 stageLevel++;
                 Console.WriteLine("축하합니다! 게임종료!");
                 if (stageLevel == 6) break;
@@ -66,6 +66,7 @@ namespace ConsoleApp2
         {
             public char[,] mapData;
             public int monsterCount;
+            
 
             public void CreateMap(int rows, int cols)
             {
@@ -82,6 +83,7 @@ namespace ConsoleApp2
                         else
                             mapData[r, c] = ' ';
                     }
+                    
                 }
                 mapData[1, 1] = 'P';
 
@@ -121,6 +123,7 @@ namespace ConsoleApp2
         {
             public int playerY;
             public int playerX;
+            
 
             public void PrintMap(char[,] data)
             {
@@ -132,11 +135,13 @@ namespace ConsoleApp2
                 }
             }
 
-            public void PlayGame(char[,] mapData, int mCount, int stageLevel)
+            public void PlayGame(char[,] mapData, int mCount,int stageLevel)
             {
                 playerY = 1;
                 playerX = 1;
+                
                 int MonsterCount = mCount;
+                
                 string statusMessage = "";
 
                 while (true)
@@ -157,11 +162,13 @@ namespace ConsoleApp2
 
                     int nextY = playerY;
                     int nextX = playerX;
+                    
 
                     if (cmd == "L") nextX--;
                     else if (cmd == "R") nextX++;
                     else if (cmd == "U") nextY--;
                     else if (cmd == "D") nextY++;
+                    
                     else continue;
 
                     if (mapData[nextY, nextX] == '#')
@@ -175,11 +182,14 @@ namespace ConsoleApp2
                             MonsterCount--;
                             statusMessage = "몬스터를 잡았습니다!";
                         }
+                        
 
                         mapData[playerY, playerX] = ' ';
                         playerY = nextY;
                         playerX = nextX;
+                        
                         mapData[playerY, playerX] = 'P';
+                        
                     }
                     if (MonsterCount <= 0)
                     {
