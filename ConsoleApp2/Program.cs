@@ -252,7 +252,7 @@ namespace ConsoleApp2
                     statusMessage = "";
                 }
 
-                Console.WriteLine("이동(L, R, U, D):");
+                Console.WriteLine("이동(W, A, S, D):");
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 string cmd = keyInfo.KeyChar.ToString().ToUpper();
@@ -260,10 +260,10 @@ namespace ConsoleApp2
                 int nextY = playerY;
                 int nextX = playerX;
 
-                if (cmd == "L") nextX--;
-                else if (cmd == "R") nextX++;
-                else if (cmd == "U") nextY--;
-                else if (cmd == "D") nextY++;
+                if (cmd == "A") nextX--;
+                else if (cmd == "D") nextX++;
+                else if (cmd == "W") nextY--;
+                else if (cmd == "S") nextY++;
 
                 else continue;
 
