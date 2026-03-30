@@ -39,7 +39,7 @@ namespace ConsoleApp2
         }
     }
 
-    public class DungeonGame
+    public class DungeonGame //게임 전체 흐름 관리 사용자 입력 처리, 게임시작, 종료 관리
     {
         public void PlayGame()
         {
@@ -108,7 +108,7 @@ namespace ConsoleApp2
         string NickName { get; set; }
     }
 
-    public class MapData
+    public class MapData //랜덤 맵 생성 알고리즘, 몬스터/장애물 배치, 맵 크기 계산
     {
         public char[,] mapData;
         public int monsterCount;
@@ -163,7 +163,7 @@ namespace ConsoleApp2
         }
     }
 
-    public class Map
+    public class Map // 플레이어의 움직임을 처리 판정, 승리조건
     {
         public int playerY;
         public int playerX;
